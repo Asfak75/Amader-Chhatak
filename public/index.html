@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--SEO-START-->
+<title>আমাদের ছাতক — সত্যের সন্ধানে, মানুষের পাশে</title>
+<meta name="description" content="ছাতক, সুনামগঞ্জ ও সারা দেশের সর্বশেষ সংবাদ, রাজনীতি, খেলাধুলা, শিক্ষা ও চাকরির খবর — আমাদের ছাতক।">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="আমাদের ছাতক">
+<meta property="og:locale" content="bn_BD">
+<meta property="og:title" content="আমাদের ছাতক — সত্যের সন্ধানে, মানুষের পাশে">
+<meta property="og:description" content="ছাতক, সুনামগঞ্জ ও সারা দেশের সর্বশেষ সংবাদ।">
+<!--SEO-END-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Serif+Bengali:wght@600;800&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<div class="ticker" id="ticker" hidden>
+  <div class="wrap ticker-in">
+    <span class="ticker-label">জরুরি সংবাদ</span>
+    <div class="ticker-track"><div class="ticker-move" id="tickerMove"></div></div>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr-top"><span id="today"></span><span>সত্যের সন্ধানে, মানুষের পাশে</span></div>
+  <div class="wrap hdr-main">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="মেনু খুলুন" title="মেনু">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="/" data-link class="logo" aria-label="আমাদের ছাতক — হোম">আমাদের <span>ছাতক</span></a>
+    <button class="icon-btn" id="searchBtn" aria-label="সংবাদ খুঁজুন" title="খুঁজুন">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+  </div>
+  <nav class="nav" id="nav" aria-label="প্রধান মেনু"><div class="wrap"><ul id="navList"></ul></div></nav>
+  <form class="searchbar" id="searchForm" hidden>
+    <div class="wrap">
+      <input type="search" id="searchInput" placeholder="সংবাদ খুঁজুন — যেমন: ছাতক, সুনামগঞ্জ" aria-label="খোঁজার শব্দ" autocomplete="off">
+      <button type="submit">খুঁজুন</button>
+    </div>
+  </form>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-logo">আমাদের <span>ছাতক</span></div>
+    <p class="ftr-tag">“সত্যের সন্ধানে, মানুষের পাশে”</p>
+    <ul class="ftr-menu">
+      <li><a href="/page/about" data-link>আমাদের সম্পর্কে</a></li>
+      <li><a href="/page/contact" data-link>যোগাযোগ</a></li>
+      <li><a href="/page/privacy" data-link>গোপনীয়তা নীতি</a></li>
+      <li><a href="/page/terms" data-link>ব্যবহারের শর্তাবলি</a></li>
+    </ul>
+    <p class="ftr-copy">© ২০২৬ আমাদের ছাতক — সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<!-- config.js তৈরি হয় build.js থেকে (Netlify Environment Variables-এর মান নিয়ে) -->
+<script src="/config.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

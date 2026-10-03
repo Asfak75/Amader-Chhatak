@@ -1,0 +1,82 @@
+:root{--navy:#0b2a5b;--red:#c8102e;--ink:#14181f;--muted:#5f6773;--line:#e3e6ea;--soft:#f4f5f7;--ok:#16794a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Noto Sans Bengali',system-ui,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6;overflow-x:hidden}
+button,input,select,textarea{font:inherit}
+img{max-width:100%}
+.center{text-align:center;padding:40px}
+a{color:var(--navy)}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+/* লগইন */
+.login{max-width:400px;margin:8vh auto;background:#fff;padding:28px 24px;border-radius:10px;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.login h1{margin:0 0 4px;color:var(--navy);font-size:24px}
+.login p{margin:0 0 18px;color:var(--muted)}
+
+/* লেআউট */
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.side{background:var(--navy);color:#fff;padding:18px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.side .brand{font-weight:700;font-size:20px;padding:4px 10px 16px}
+.side a,.side button.lnk{display:block;width:100%;text-align:left;color:#dbe4f5;background:none;border:0;padding:10px 12px;border-radius:6px;text-decoration:none;cursor:pointer;font-size:16px}
+.side a:hover,.side a.on,.side button.lnk:hover{background:rgba(255,255,255,.14);color:#fff}
+.topbar{display:none}
+.main{padding:22px;min-width:0}
+.main h1{margin:0 0 16px;font-size:24px;color:var(--navy)}
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr}
+  .side{position:fixed;inset:0 auto 0 0;width:240px;height:100%;z-index:50;transform:translateX(-100%);transition:transform .2s}
+  .side.open{transform:none}
+  .topbar{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:8px 12px;position:sticky;top:0;z-index:40}
+  .topbar button{background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+  .main{padding:14px}
+}
+
+/* ফর্ম ও বোতাম */
+label{display:block;font-weight:600;margin:14px 0 4px}
+input[type=text],input[type=email],input[type=password],input[type=date],input[type=time],select,textarea{width:100%;padding:10px 12px;border:1px solid #cfd4da;border-radius:6px;background:#fff;font-size:16px}
+textarea{min-height:110px;resize:vertical}
+.btn{display:inline-block;border:0;border-radius:6px;padding:10px 18px;font-weight:600;cursor:pointer;background:var(--navy);color:#fff;font-size:15.5px;text-decoration:none}
+.btn.red{background:var(--red)}.btn.ghost{background:#fff;color:var(--ink);border:1px solid #cfd4da}.btn.ok{background:var(--ok)}
+.btn.sm{padding:5px 12px;font-size:14px}
+.btn:disabled{opacity:.6;cursor:wait}
+.row{display:flex;flex-wrap:wrap;gap:12px}.row>*{flex:1;min-width:150px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.err{color:#b00020;margin:10px 0 0;min-height:1.2em}
+.panel{background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 6px rgba(0,0,0,.06);margin-bottom:18px}
+.hint{color:var(--muted);font-size:14px;margin:4px 0 0}
+
+/* পরিসংখ্যান */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:18px}
+.stat{background:#fff;border-radius:10px;padding:16px;border-left:5px solid var(--navy);box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.stat b{display:block;font-size:30px;line-height:1.2}.stat span{color:var(--muted)}
+
+/* তালিকা */
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{border:1px solid #cfd4da;background:#fff;border-radius:20px;padding:6px 16px;cursor:pointer}
+.tabs button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.item{display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:center;background:#fff;border-radius:10px;padding:10px;margin-bottom:10px;box-shadow:0 1px 5px rgba(0,0,0,.05)}
+.item .th{width:84px;height:60px;border-radius:6px;background:var(--soft);object-fit:cover}
+.item h3{margin:0;font-size:16.5px;line-height:1.45}
+.item .m{color:var(--muted);font-size:13.5px}
+.item .ops{display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-block;padding:0 10px;border-radius:12px;font-size:13px;font-weight:600}
+.badge.p{background:#dff5ea;color:var(--ok)}.badge.d{background:#fff0cc;color:#8a5a00}
+@media (max-width:640px){.item{grid-template-columns:70px 1fr}.item .th{width:70px;height:54px}.item .ops{grid-column:1/-1}}
+
+/* এডিটর */
+.tb{display:flex;flex-wrap:wrap;gap:4px;padding:6px;background:var(--soft);border:1px solid #cfd4da;border-bottom:0;border-radius:6px 6px 0 0}
+.tb button{background:#fff;border:1px solid #cfd4da;border-radius:4px;padding:4px 10px;cursor:pointer;min-width:38px}
+.tb button:hover{background:#e8ecf3}
+.ed{min-height:300px;max-height:70vh;overflow:auto;padding:12px 14px;border:1px solid #cfd4da;border-radius:0 0 6px 6px;background:#fff;font-size:18px;line-height:1.9;outline:0}
+.ed:focus{border-color:var(--navy)}
+.ed img{max-width:100%;height:auto}
+.ed h2,.ed h3{color:var(--navy)}
+.cover-prev{margin-top:10px}.cover-prev img{max-height:220px;border-radius:6px}
+
+/* মডাল ও টোস্ট */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:100;padding:16px}
+.modal>div{background:#fff;border-radius:10px;padding:22px;max-width:380px;width:100%}
+.modal p{margin:0 0 18px;font-size:18px}
+.modal .actions{margin:0;justify-content:flex-end}
+#toasts{position:fixed;right:14px;bottom:14px;z-index:120;display:grid;gap:8px}
+.toast{background:var(--ok);color:#fff;padding:10px 16px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.toast.bad{background:#b00020}
