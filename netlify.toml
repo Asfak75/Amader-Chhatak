@@ -1,0 +1,40 @@
+# Netlify কনফিগারেশন — বিল্ডের সময় build.js চলে এবং Environment Variable থেকে public/config.js তৈরি করে
+[build]
+  command = "node build.js"
+  publish = "public"
+  functions = "netlify/functions"
+
+# অ্যাডমিন প্যানেল: /admin
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+# সংবাদের পাতা: সার্ভার থেকে SEO/Open Graph ট্যাগ বসিয়ে পাঠানো হয় (ফেসবুক/হোয়াটসঅ্যাপ প্রিভিউয়ের জন্য)
+[[redirects]]
+  from = "/news/*"
+  to = "/.netlify/functions/news-meta"
+  status = 200
+
+# বাকি সব পাতা SPA হিসেবে index.html-এ যাবে
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/admin*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
